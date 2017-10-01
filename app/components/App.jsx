@@ -4,7 +4,7 @@ import { renderRoutes } from 'react-router-config';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import Home from 'material-ui/svg-icons/action/home';
+import EventSeat from 'material-ui/svg-icons/action/event-seat';
 import Filter1 from 'material-ui/svg-icons/image/filter-1';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
@@ -44,17 +44,17 @@ class App extends React.Component {
             Close
           </MenuItem>
           <MenuItem
-            leftIcon={ <Home /> }
+            leftIcon={ <EventSeat /> }
             onClick={ () => {
                 this.setState({
                   open: false
                   },
-                  this.props.history.push('')
+                  this.props.history.push('/')
                 )
               }
             }
           >
-            Home
+            Teams
           </MenuItem>
           <MenuItem
             leftIcon={ <Whatshot /> }
@@ -62,7 +62,7 @@ class App extends React.Component {
                 this.setState({
                   open: false
                   },
-                  this.props.history.push('power-rankings')
+                  this.props.history.push('/power-rankings')
                 )
               }
             }
@@ -75,7 +75,7 @@ class App extends React.Component {
                 this.setState({
                   open: false
                   },
-                  this.props.history.push('scoreboard')
+                  this.props.history.push('/scoreboard')
                 )
               }
             }

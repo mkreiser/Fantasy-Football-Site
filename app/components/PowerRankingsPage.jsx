@@ -12,7 +12,7 @@ class PowerRankingsPage extends React.Component {
       data: null
     };
 
-    axios.get('/336358/2017/power-rankings/').then((response) => {
+    axios.get('/336358/power-rankings/').then((response) => {
       this.setState({
         data: response.data
       });
@@ -25,7 +25,11 @@ class PowerRankingsPage extends React.Component {
           {
             _.map(this.state.data.rankings, (ranking, index) => {
               return (
-                <Card key={ index }>
+                <Card
+                  key={ index }
+                  className="ranking-card"
+                  onClick={ () => this.props.history.push(`/team/${ranking.team.team_id}`) }
+                >
                   <CardText className="rankings-card-text">
                     <div>
                       <div className="team-name">{index + 1}. { ranking.team.team_name }</div>
@@ -47,6 +51,7 @@ class PowerRankingsPage extends React.Component {
     return (
       <div className="power-ranking-page">
         <div className="title">Power Rankings</div>
+        <div className="subtitle">{ this.state.data ? `Week ${this.state.data.week}` : null}</div>
         { child }
       </div>
     );

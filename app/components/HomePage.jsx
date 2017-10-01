@@ -13,7 +13,7 @@ class HomePage extends React.Component {
       data: null
     };
 
-    axios.get('/336358/2017/teams/').then((response) => {
+    axios.get('/336358/teams/').then((response) => {
       this.setState({
         data: response.data
       });
@@ -26,7 +26,11 @@ class HomePage extends React.Component {
           {
             _.map(this.state.data.teams, (team, index) => {
               return (
-                <Card key={ index }>
+                <Card
+                  key={ index }
+                  className="team-card"
+                  onClick={ () => this.props.history.push(`/team/${team.team_id}`) }
+                  >
                   <CardText className="teams-card-text">
                     <div>
                       <div className="team-name">{ team.team_name }</div>
@@ -36,8 +40,8 @@ class HomePage extends React.Component {
                       <KeyboardArrowRight
                         style={
                           {
-                            height: '36px',
-                            width: '36px'
+                            height: '30px',
+                            width: '30px'
                           }
                         }
                       />

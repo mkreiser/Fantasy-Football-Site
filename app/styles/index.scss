@@ -2,9 +2,10 @@
 
 $gray: #808080;
 $white: #FFF;
+$margin-small: 10px;
+$margin-normal: 20px;
 $padding-small: 10px;
 $padding-large: 25px;
-$bold: 600;
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -13,21 +14,27 @@ $bold: 600;
 }
 
 html, body, #root, .app {
+  background-color: #f8f8ff;
   height: 100%;
   width: 100%;
 }
 
-.app {
-  background-color: #f8f8ff;
-}
-
 .app-container {
   margin: 0 auto;
+  max-width: 1000px;
   padding: $padding-large;
 }
 
 .home-page {
   .teams {
+    margin-top: $margin-normal;
+
+    .team-card {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     .teams-card-text {
       display: flex;
       align-items: center;
@@ -35,7 +42,6 @@ html, body, #root, .app {
 
       .team-name {
         font-size: 20px;
-        font-weight: $bold;
       }
 
       .owner {
@@ -48,6 +54,8 @@ html, body, #root, .app {
 
 .scoreboard-page {
   .scoreboard {
+    margin-top: $margin-normal;
+
     .scoreboard-card-text {
       display: flex;
       align-items: center;
@@ -62,7 +70,6 @@ html, body, #root, .app {
 
         .team-name, .score {
           font-size: 20px;
-          font-weight: $bold;
         }
 
         .owner {
@@ -80,6 +87,14 @@ html, body, #root, .app {
 
 .power-ranking-page {
   .rankings {
+    margin-top: $margin-normal;
+
+    .ranking-card {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     .rankings-card-text {
       display: flex;
       align-items: center;
@@ -87,7 +102,6 @@ html, body, #root, .app {
 
       .team-name, .score {
         font-size: 20px;
-        font-weight: $bold;
       }
 
       .owner {
@@ -98,9 +112,31 @@ html, body, #root, .app {
   }
 }
 
+.team-page {
+  .team-back-button {
+    margin-top: $margin-normal;
+  }
+
+  .all-time-record {
+    margin-bottom: $margin-small;
+  }
+
+  .team-history-loading {
+    flex-direction: column;
+
+    .loading-text {
+      margin-bottom: $margin-small;
+    }
+  }
+}
+
 .title {
   font-size: 48px;
-  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: $gray;
 }
 
 .loading {

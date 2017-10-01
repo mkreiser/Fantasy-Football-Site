@@ -12,8 +12,7 @@ class ScoreboardPage  extends React.Component {
       data: null
     };
 
-    axios.get('/336358/2017/scoreboard/').then((response) => {
-      console.log(response.data);
+    axios.get('/336358/scoreboard/').then((response) => {
       this.setState({
         data: response.data
       });
@@ -38,8 +37,8 @@ class ScoreboardPage  extends React.Component {
                     <div className="team">
                       <div className="score">{ board.away_score }</div>
                       <div>
-                        <div className="team-name">{ board.home_team.team_name }</div>
-                        <div className="owner right">{ board.home_team.owner }</div>
+                        <div className="team-name">{ board.away_team.team_name }</div>
+                        <div className="owner right">{ board.away_team.owner }</div>
                       </div>
                     </div>
                   </CardText>
