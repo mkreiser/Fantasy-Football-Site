@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$gray: #808080;
+$white: #FFF;
+$padding-small: 10px;
+$padding-large: 25px;
+$bold: 600;
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root, .app {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  background-color: #f8f8ff;
+}
+
+.app-container {
+  margin: 0 auto;
+  padding: $padding-large;
+}
+
+.home-page {
+  .teams {
+    .teams-card-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .team-name {
+        font-size: 20px;
+        font-weight: $bold;
+      }
+
+      .owner {
+        font-size: 14px;
+        color: $gray;
+      }
+    }
+  }
+}
+
+.scoreboard-page {
+  .scoreboard {
+    .scoreboard-card-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .team {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $padding-small;
+        width: 50%;
+
+        .team-name, .score {
+          font-size: 20px;
+          font-weight: $bold;
+        }
+
+        .owner {
+          font-size: 14px;
+          color: $gray;
+
+            &.right {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+.power-ranking-page {
+  .rankings {
+    .rankings-card-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .team-name, .score {
+        font-size: 20px;
+        font-weight: $bold;
+      }
+
+      .owner {
+        font-size: 14px;
+        color: $gray;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
